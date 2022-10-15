@@ -1,3 +1,9 @@
+<style>
+img {
+  image-rendering: pixelated;
+}
+</style>
+
 # MLH-Hackathon-2022-Isidisi
 
 ---
