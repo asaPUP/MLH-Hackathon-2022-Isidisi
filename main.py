@@ -39,6 +39,40 @@ class Enemigo(pygame.sprite.Sprite):
         self.image = self.frames[self.animation_index]
         self.rect = self.image.get_rect(midbottom = (x_pos,y_pos))
 
+class Jugador(pygame.sprite.Sprite):
+    def __init__(self,type):
+        super().__init__()
+        
+        if type == 'blue':
+            jugador_blue_1 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_2 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_3 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_4 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_5 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_6 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_7 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_8 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            self.frames = [jugador_blue_1, jugador_blue_2, jugador_blue_3, jugador_blue_4, jugador_blue_5, jugador_blue_6, jugador_blue_7, jugador_blue_8]
+            x_pos = randint(-200,0)
+            y_pos = random.choice([90, 160, 230]) #random entre los tres carriles de arriba
+            
+        elif type == 'red':
+            jugador_red_1 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_2 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_3 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_4 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_5 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_6 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_7 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_8 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            self.frames = [jugador_red_1, jugador_red_2, jugador_red_3, jugador_red_4, jugador_red_5, jugador_red_6, jugador_red_7, jugador_red_8]
+            x_pos = randint(-200,0)
+            y_pos = random.choice([90, 160, 230]) #random entre los tres carriles de arriba
+        
+        self.animation_index = 0
+        self.image = self.frames[self.animation_index]
+        self.rect = self.image.get_rect(midbottom = (x_pos,y_pos))
+
 pygame.init()
 
 WIDTH, HEIGHT = 900, 500
