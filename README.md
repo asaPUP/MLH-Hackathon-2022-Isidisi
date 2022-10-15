@@ -4,4 +4,5 @@
 
 Hola
 
-<video src='https://www.youtube.com/watch?v=AY9MnQ4x3zk&t=4237s' width=180/>
+
+<img src="https://peizhuoli.github.io/neural-blend-shapes/images/video_teaser.gif" slign="center">
