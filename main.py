@@ -90,12 +90,12 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugador_walk[self.jugador_index]
         self.rect = self.image.get_rect(midbottom = (x_pos, y_pos))
 
-    def player_input(self):
+    def player_input(self, type):
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_UP]:
+        if (keys[pygame.K_UP] and type == 'blue'):
             self.rect.y -= 70
             print("arriba")
-        elif keys[pygame.K_DOWN]:
+        elif (keys[pygame.K_DOWN] and type == 'blue'):
             self.rect.y += 70
             print("abajo")
 
