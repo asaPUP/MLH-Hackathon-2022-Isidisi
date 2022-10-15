@@ -6,18 +6,29 @@ from random import *
 import numpy as np
 
 class Enemigo(pygame.sprite.Sprite):
-    def __init__(self,type):
+    def __init__(self,type,dalt):
         super().__init__()
-        
+
         if type == 'top':
-            enemigo_top_1 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo1.png').convert_alpha())
-            enemigo_top_2 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo2.png').convert_alpha())
-            enemigo_top_3 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo3.png').convert_alpha())
-            enemigo_top_4 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo4.png').convert_alpha())
-            enemigo_top_5 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo5.png').convert_alpha())
-            enemigo_top_6 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo6.png').convert_alpha())
-            enemigo_top_7 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo7.png').convert_alpha())
-            enemigo_top_8 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo8.png').convert_alpha())
+            if dalt == False:
+                enemigo_top_1 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo1.png').convert_alpha())
+                enemigo_top_2 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo2.png').convert_alpha())
+                enemigo_top_3 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo3.png').convert_alpha())
+                enemigo_top_4 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo4.png').convert_alpha())
+                enemigo_top_5 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo5.png').convert_alpha())
+                enemigo_top_6 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo6.png').convert_alpha())
+                enemigo_top_7 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo7.png').convert_alpha())
+                enemigo_top_8 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo8.png').convert_alpha())
+            elif dalt == False:
+                enemigo_top_1 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo1.png').convert_alpha())
+                enemigo_top_2 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo2.png').convert_alpha())
+                enemigo_top_3 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo3.png').convert_alpha())
+                enemigo_top_4 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo4.png').convert_alpha())
+                enemigo_top_5 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo5.png').convert_alpha())
+                enemigo_top_6 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo6.png').convert_alpha())
+                enemigo_top_7 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo7.png').convert_alpha())
+                enemigo_top_8 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo8.png').convert_alpha())
+            
             self.frames = [enemigo_top_1, enemigo_top_2, enemigo_top_3, enemigo_top_4, enemigo_top_5, enemigo_top_6, enemigo_top_7, enemigo_top_8]
             x_pos = randint(900,1100)
             y_pos = choice([90, 160, 230]) #random entre los tres carriles de arriba
@@ -62,7 +73,7 @@ class Enemigo(pygame.sprite.Sprite):
                 self.kill()
 
 class Jugador(pygame.sprite.Sprite):
-    def __init__(self,type):
+    def __init__(self,type,dalt):
         super().__init__()
         
         if type == 'blue':
@@ -80,15 +91,25 @@ class Jugador(pygame.sprite.Sprite):
             y_pos = 160
 
         elif type == 'red':
-            jugador_red_1 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot1.png').convert_alpha())
-            jugador_red_2 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot2.png').convert_alpha())
-            jugador_red_3 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot3.png').convert_alpha())
-            jugador_red_4 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot4.png').convert_alpha())
-            jugador_red_5 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot5.png').convert_alpha())
-            jugador_red_6 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot6.png').convert_alpha())
-            jugador_red_7 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot7.png').convert_alpha())
-            jugador_red_8 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot8.png').convert_alpha())
-            
+            if dalt == False:
+                jugador_red_1 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot1.png').convert_alpha())
+                jugador_red_2 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot2.png').convert_alpha())
+                jugador_red_3 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot3.png').convert_alpha())
+                jugador_red_4 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot4.png').convert_alpha())
+                jugador_red_5 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot5.png').convert_alpha())
+                jugador_red_6 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot6.png').convert_alpha())
+                jugador_red_7 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot7.png').convert_alpha())
+                jugador_red_8 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot8.png').convert_alpha())
+            elif dalt == True:
+                jugador_red_1 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD1.png').convert_alpha())
+                jugador_red_2 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD2.png').convert_alpha())
+                jugador_red_3 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD3.png').convert_alpha())
+                jugador_red_4 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD4.png').convert_alpha())
+                jugador_red_5 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD5.png').convert_alpha())
+                jugador_red_6 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD6.png').convert_alpha())
+                jugador_red_7 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD7.png').convert_alpha())
+                jugador_red_8 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD8.png').convert_alpha()) 
+
             self.jugador_walk = [jugador_red_1, jugador_red_2, jugador_red_3, jugador_red_4, jugador_red_5, jugador_red_6, jugador_red_7, jugador_red_8]
             x_pos = WIDTH - 20 - 32
             y_pos = 410
@@ -114,6 +135,8 @@ class Jugador(pygame.sprite.Sprite):
         
 pygame.init()
 
+dalt = False
+
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("R0B0 / K1LL")
@@ -133,8 +156,12 @@ red_player.add(Jugador('red'))
 
 obstacle_group = pygame.sprite.Group()
 
-fondo_surface = pygame.image.load("assets/marcos/FondoGeneal.png").convert()
-marcos_surface = pygame.image.load("assets/marcos/FondoMarco.png").convert_alpha()
+if dalt == False:
+    fondo_surface = pygame.image.load("assets/marcos/FondoGeneal.png").convert()
+    marcos_surface = pygame.image.load("assets/marcos/FondoMarco.png").convert_alpha()
+else:
+    fondo_surface = pygame.image.load("assets/marcos/FondosD.png").convert()
+    marcos_surface = pygame.image.load("assets/marcos/FondoMarco.png").convert_alpha()
 
 textSurface = test_font.render('R0B0 / K1LL', False, 'White')
 text_rectangle = textSurface.get_rect(center = (450, 250))
