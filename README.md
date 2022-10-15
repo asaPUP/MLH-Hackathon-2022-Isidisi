@@ -1,4 +1,4 @@
-# MLH-Hackathon-2022-Isidisi
+# MLH Hackathon Warmup 2022 | Team Isidisi
 ![Python](https://img.shields.io/badge/Python->=3-Blue?logo=python)
 
 Hola como van?
