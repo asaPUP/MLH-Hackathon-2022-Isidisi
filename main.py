@@ -93,10 +93,10 @@ class Jugador(pygame.sprite.Sprite):
     def player_input(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_UP]:
-            x_pos -= 70
+            self.rect.y -= 70
             print("arriba")
         elif keys[pygame.K_DOWN]:
-            x_pos += 70
+            self.rect.y += 70
             print("abajo")
 
     def animation_state(self):
