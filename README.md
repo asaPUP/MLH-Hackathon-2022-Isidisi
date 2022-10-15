@@ -4,4 +4,5 @@
 
 Hola
 
-<video src='https://drive.google.com/file/d/1odApEdQxwPZXujbrEzFWqrf7M1bOZbmQ/view?usp=sharing' width=180/>
+
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bagrov2.gif" slign="center">
