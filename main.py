@@ -67,7 +67,7 @@ class Jugador(pygame.sprite.Sprite):
             jugador_blue_7 = pygame.image.load('assets/jugadores/azul/blueRobot7.png').convert_alpha()
             jugador_blue_8 = pygame.image.load('assets/jugadores/azul/blueRobot8.png').convert_alpha()
             self.player_walk = [jugador_blue_1, jugador_blue_2, jugador_blue_3, jugador_blue_4, jugador_blue_5, jugador_blue_6, jugador_blue_7, jugador_blue_8]
-            
+            y_pos = 160
 
         elif type == 'red':
             jugador_red_1 = pygame.image.load('assets/jugadores/rojo/redRobot1.png').convert_alpha()
@@ -79,7 +79,8 @@ class Jugador(pygame.sprite.Sprite):
             jugador_red_7 = pygame.image.load('assets/jugadores/rojo/redRobot7.png').convert_alpha()
             jugador_red_8 = pygame.image.load('assets/jugadores/rojo/redRobot8.png').convert_alpha()
             self.player_walk = [jugador_red_1, jugador_red_2, jugador_red_3, jugador_red_4, jugador_red_5, jugador_red_6, jugador_red_7, jugador_red_8]
-        
+            y_pos = 410
+
         self.player_index = 0
         #self.player_jump = pygame.image.load('graphics/player/jump.png').convert_alpha()
         
@@ -126,7 +127,7 @@ player = pygame.sprite.GroupSingle()
 player.add(Jugador('blue'))
 
 obstacle_group = pygame.sprite.Group()
-groundSurface = pygame.image.load("assets/fondov1.png").convert()
+fondo_surface = pygame.image.load("assets/fondov1.png").convert()
 #textSurface = testFont.render('R0B0 / K1LL', False, 'Black')
 #text_rectangle = textSurface.get_rect(center = (450, 250))
 
@@ -168,17 +169,13 @@ while True:
 
     
 	#if game_active:
-		#WIN.blit(sky_surface,(0,0))
-		WIN.blit(groundSurface,(0,300))
-		#score = display_score()
+		WIN.blit(fondo_surface,(0,0))
 		
 		player.draw(WIN)
 		player.update()
 
 		obstacle_group.draw(WIN)
 		obstacle_group.update()
-
-		#game_active = collision_sprite()
 		
 	#else:
 	#	WIN.fill((94,129,162))
