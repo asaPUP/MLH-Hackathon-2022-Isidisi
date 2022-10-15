@@ -22,6 +22,10 @@ player2_surface = pygame.image.load('assets/P2.png').convert_alpha()
 player2_surface = pygame.transform.scale2x(player2_surface)
 player2_rectangle = player2_surface.get_rect(midbottom = (WIDTH - 20 - 32, HEIGHT - 20))
 
+enemigo_surface = pygame.image.load('assets/enemigo.png').convert_alpha()
+enemigo_surface = pygame.transform.scale2x(enemigo_surface)
+enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
@@ -32,6 +36,9 @@ while True:
     WIN.blit(textSurface, text_rectangle)
     WIN.blit(player1_surface, player1_rectangle)
     WIN.blit(player2_surface, player2_rectangle)
+    WIN.blit(enemigo_surface, enemigo_rectangle)
+
+    enemigo_rectangle.x -= 5
 
     pygame.display.update()
     clock.tick(60)
