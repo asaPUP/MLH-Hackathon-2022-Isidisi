@@ -25,7 +25,7 @@ while True:
         if event.type == pygame.QUIT: 
             pygame.quit()
             exit()
-        
+
     
     WIN.blit(groundSurface, (0,0) )
     WIN.blit(textSurface, (300, 50))
