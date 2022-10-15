@@ -93,8 +93,10 @@ class Jugador(pygame.sprite.Sprite):
     def player_input(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_UP]:
+            self.rect.y -= 70
             print("arriba")
         elif keys[pygame.K_DOWN]:
+            self.rect.y += 70
             print("abajo")
 
     def animation_state(self):
@@ -119,8 +121,11 @@ start_time = 0
 score = 0
 
 #========Groups
-player = pygame.sprite.GroupSingle()
-player.add(Jugador('blue'))
+blue_player = pygame.sprite.GroupSingle()
+blue_player.add(Jugador('blue'))
+
+red_player = pygame.sprite.GroupSingle()
+red_player.add(Jugador('red'))
 
 obstacle_group = pygame.sprite.Group()
 fondo_surface = pygame.image.load("assets/fondov1.png").convert()
@@ -137,14 +142,17 @@ while True:
             pygame.quit()
             exit()
         
-        WIN.blit(fondo_surface,(0,0))
-        WIN.blit(textSurface, text_rectangle)
-        
-        player.draw(WIN)
-        player.update()
+    WIN.blit(fondo_surface,(0,0))
+    WIN.blit(textSurface, text_rectangle)
+    
+    blue_player.draw(WIN)
+    blue_player.update()
 
-        obstacle_group.draw(WIN)
-        obstacle_group.update()
+    red_player.draw(WIN)
+    red_player.update()
+
+    obstacle_group.draw(WIN)
+    obstacle_group.update()
 
     pygame.display.update()
     clock.tick(60)
