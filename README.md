@@ -1,7 +1,8 @@
 # MLH-Hackathon-2022-Isidisi
 
 ---
-![Python](https://img.shields.io/badge/Python->=3.8-Blue?logo=python)  ![Pytorch](https://img.shields.io/badge/PyTorch->=1.8.0-Red?logo=pytorch)
+![Python](https://img.shields.io/badge/Python->=3-Blue?logo=python)
+
 Hola
 
 
