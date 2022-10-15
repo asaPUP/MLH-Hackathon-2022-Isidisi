@@ -1,3 +1,4 @@
+from ssl import cert_time_to_seconds
 from tkinter import Toplevel
 import pygame
 from numpy.random import choice
@@ -97,20 +98,44 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugador_walk[self.jugador_index]
         self.rect = self.image.get_rect(midbottom = (x_pos, y_pos))
 
-    def player_input(self):
+    def player_input(self, type):
         keys = pygame.key.get_pressed()
-        if (keys[pygame.K_UP]):
-            print("arriba")
-        elif (keys[pygame.K_DOWN]):
-            print("abajo")
+        ##########==========================================MOVER BLUE
+        if type == 'blue':
+            #ARRIBA
+            if keys[pygame.K_1]:
+                self.rect.y = 26
+                print("arriba -> abajo")
+            #ENMEDIO
+            elif keys[pygame.K_2]:
+                self.rect.y = 96
+                print("enmedio -> abajo")
+            #ABAJO
+            elif keys[pygame.K_3]:
+                self.rect.y = 166
+                print("abajo -> enmedio")
+        ##########==========================================MOVER RED
+        elif type == 'red':
+            #ARRIBA
+            if keys[pygame.K_8]:
+                self.rect.y = 240+35
+                print("arriba -> abajo")
+            #ENMEDIO
+            elif keys[pygame.K_9]:
+                self.rect.y = 310+35
+                print("enmedio -> abajo")
+            #ABAJO
+            elif keys[pygame.K_0]:
+                self.rect.y = 380+35
+                print("abajo -> enmedio")
 
     def animation_state(self):
         self.jugador_index += 0.5
         if self.jugador_index >= len(self.jugador_walk): self.jugador_index = 0
         self.image = self.jugador_walk[int(self.jugador_index)]
 
-    def update(self):
-        self.player_input()
+    def update(self, type):
+        self.player_input(type)
         self.animation_state()
         
 pygame.init()
@@ -157,10 +182,10 @@ while True:
     WIN.blit(textSurface, text_rectangle)
     
     blue_player.draw(WIN)
-    blue_player.update()
+    blue_player.update('blue')
 
     red_player.draw(WIN)
-    red_player.update()
+    red_player.update('red')
 
     obstacle_group.draw(WIN)
     obstacle_group.update()
