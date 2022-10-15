@@ -97,7 +97,6 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugador_walk[self.jugador_index]
         self.rect = self.image.get_rect(midbottom = (x_pos, y_pos))
 
-    def player_input(self):
         keys = pygame.key.get_pressed()
         if (keys[pygame.K_UP]):
             print("arriba")
