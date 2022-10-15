@@ -1,9 +1,3 @@
-<style>
-img {
-  image-rendering: pixelated;
-}
-</style>
-
 # MLH-Hackathon-2022-Isidisi
 
 ---
@@ -12,4 +6,4 @@ img {
 Hola
 
 
-<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bagrov2.gif" slign="center" ><img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/blueRobot.gif" slign="center" width="500" image-rendering="pixelated">
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bagrov2.gif" slign="center" ><img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/blueRobot.gif" slign="center" width="500" image-rendering="-webkit-optimize-contrast">
