@@ -44,27 +44,27 @@ class Jugador(pygame.sprite.Sprite):
         super().__init__()
         
         if type == 'blue':
-            jugador_blue_1 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_2 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_3 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_4 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_5 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_6 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_7 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
-            jugador_blue_8 = pygame.image.load('graphics/fly/P1.png').convert_alpha()
+            jugador_blue_1 = pygame.image.load('assets/blueRobot/blueRobot1.png').convert_alpha()
+            jugador_blue_2 = pygame.image.load('assets/blueRobot/blueRobot2.png').convert_alpha()
+            jugador_blue_3 = pygame.image.load('assets/blueRobot/blueRobot3.png').convert_alpha()
+            jugador_blue_4 = pygame.image.load('assets/blueRobot/blueRobot4.png').convert_alpha()
+            jugador_blue_5 = pygame.image.load('assets/blueRobot/blueRobot5.png').convert_alpha()
+            jugador_blue_6 = pygame.image.load('assets/blueRobot/blueRobot6.png').convert_alpha()
+            jugador_blue_7 = pygame.image.load('assets/blueRobot/blueRobot7.png').convert_alpha()
+            jugador_blue_8 = pygame.image.load('assets/blueRobot/blueRobot8.png').convert_alpha()
             self.frames = [jugador_blue_1, jugador_blue_2, jugador_blue_3, jugador_blue_4, jugador_blue_5, jugador_blue_6, jugador_blue_7, jugador_blue_8]
             x_pos = randint(-200,0)
             y_pos = random.choice([90, 160, 230]) #random entre los tres carriles de arriba
             
         elif type == 'red':
-            jugador_red_1 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_2 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_3 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_4 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_5 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_6 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_7 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
-            jugador_red_8 = pygame.image.load('graphics/fly/P2.png').convert_alpha()
+            jugador_red_1 = pygame.image.load('assets/redRobot/redRobot1.png').convert_alpha()
+            jugador_red_2 = pygame.image.load('assets/redRobot/redRobot2.png').convert_alpha()
+            jugador_red_3 = pygame.image.load('assets/redRobot/redRobot3.png').convert_alpha()
+            jugador_red_4 = pygame.image.load('assets/redRobot/redRobot4.png').convert_alpha()
+            jugador_red_5 = pygame.image.load('assets/redRobot/redRobot5.png').convert_alpha()
+            jugador_red_6 = pygame.image.load('assets/redRobot/redRobot6.png').convert_alpha()
+            jugador_red_7 = pygame.image.load('assets/redRobot/redRobot7.png').convert_alpha()
+            jugador_red_8 = pygame.image.load('assets/redRobot/redRobot8.png').convert_alpha()
             self.frames = [jugador_red_1, jugador_red_2, jugador_red_3, jugador_red_4, jugador_red_5, jugador_red_6, jugador_red_7, jugador_red_8]
             x_pos = randint(-200,0)
             y_pos = random.choice([90, 160, 230]) #random entre los tres carriles de arriba
@@ -73,6 +73,21 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.frames[self.animation_index]
         self.rect = self.image.get_rect(midbottom = (x_pos,y_pos))
 
+    def player_input(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K] and self.rect.bottom >= 300:
+            self.gravity = -20
+            self.jump_sound.play()
+
+    def animation_state(self):
+        self.animation_index += 0.1 
+        if self.animation_index >= len(self.frames): self.animation_index = 0
+        self.image = self.frames[int(self.animation_index)]
+
+    def update(self):
+        self.animation_state()
+        self.rect.x -= 6
+        self.destroy()
 pygame.init()
 
 WIDTH, HEIGHT = 900, 500
