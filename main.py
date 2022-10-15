@@ -66,7 +66,7 @@ class Jugador(pygame.sprite.Sprite):
             jugador_blue_6 = pygame.image.load('assets/jugadores/azul/blueRobot6.png').convert_alpha()
             jugador_blue_7 = pygame.image.load('assets/jugadores/azul/blueRobot7.png').convert_alpha()
             jugador_blue_8 = pygame.image.load('assets/jugadores/azul/blueRobot8.png').convert_alpha()
-            self.player_walk = [jugador_blue_1, jugador_blue_2, jugador_blue_3, jugador_blue_4, jugador_blue_5, jugador_blue_6, jugador_blue_7, jugador_blue_8]
+            self.jugador_walk = [jugador_blue_1, jugador_blue_2, jugador_blue_3, jugador_blue_4, jugador_blue_5, jugador_blue_6, jugador_blue_7, jugador_blue_8]
             y_pos = 160
 
         elif type == 'red':
@@ -78,18 +78,13 @@ class Jugador(pygame.sprite.Sprite):
             jugador_red_6 = pygame.image.load('assets/jugadores/rojo/redRobot6.png').convert_alpha()
             jugador_red_7 = pygame.image.load('assets/jugadores/rojo/redRobot7.png').convert_alpha()
             jugador_red_8 = pygame.image.load('assets/jugadores/rojo/redRobot8.png').convert_alpha()
-            self.player_walk = [jugador_red_1, jugador_red_2, jugador_red_3, jugador_red_4, jugador_red_5, jugador_red_6, jugador_red_7, jugador_red_8]
+            self.jugador_walk = [jugador_red_1, jugador_red_2, jugador_red_3, jugador_red_4, jugador_red_5, jugador_red_6, jugador_red_7, jugador_red_8]
             y_pos = 410
 
-        self.player_index = 0
-        #self.player_jump = pygame.image.load('graphics/player/jump.png').convert_alpha()
-        
-        self.image = self.player_walk[self.player_index]
+        self.jugador_index = 0
+        self.image = self.jugador_walk[self.jugador_index]
         self.rect = self.image.get_rect(midbottom = (80,300))
         self.gravity = 0
-
-        #self.jump_sound = pygame.mixer.Sound('audio/jump.mp3')
-        #self.jump_sound.set_volume(0.5)
 
     def player_input(self):
         keys = pygame.key.get_pressed()
@@ -99,9 +94,9 @@ class Jugador(pygame.sprite.Sprite):
             print("abajo")
 
     def animation_state(self):
-        self.player_index += 0.1 
-        if self.player_index >= len(self.player_walk): self.player_index = 0
-        self.image = self.player_walk[int(self.player_index)]
+        self.jugador_index += 0.1 
+        if self.jugador_index >= len(self.jugador_walk): self.jugador_index = 0
+        self.image = self.jugador_walk[int(self.jugador_index)]
 
     def update(self):
         self.player_input()
@@ -118,8 +113,6 @@ test_font = pygame.font.Font('fonts/RobotRoc.otf', 32)
 game_active = False
 start_time = 0
 score = 0
-#bg_music = pygame.mixer.Sound('audio/music.wav')
-#bg_music.play(loops = -1)
 #========
 
 #========Groups
@@ -128,8 +121,8 @@ player.add(Jugador('blue'))
 
 obstacle_group = pygame.sprite.Group()
 fondo_surface = pygame.image.load("assets/fondov1.png").convert()
-#textSurface = testFont.render('R0B0 / K1LL', False, 'Black')
-#text_rectangle = textSurface.get_rect(center = (450, 250))
+textSurface = test_font.render('R0B0 / K1LL', False, 'Black')
+text_rectangle = textSurface.get_rect(center = (450, 250))
 
 #========Intro screen
 
@@ -166,27 +159,15 @@ while True:
 			if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
 				game_active = True
 				start_time = int(pygame.time.get_ticks() / 1000)
+        
+        WIN.blit(fondo_surface,(0,0))
+        WIN.blit(textSurface, text_rectangle)
+        
+        player.draw(WIN)
+        player.update()
 
-    
-	#if game_active:
-		WIN.blit(fondo_surface,(0,0))
-		
-		player.draw(WIN)
-		player.update()
-
-		obstacle_group.draw(WIN)
-		obstacle_group.update()
-		
-	#else:
-	#	WIN.fill((94,129,162))
-		#WIN.blit(player_stand,player_stand_rect)
-
-		#score_message = test_font.render(f'Your score: {score}',False,(111,196,169))
-		#score_message_rect = score_message.get_rect(center = (400,330))
-		#WIN.blit(game_name,game_name_rect)
-
-		#if score == 0: WIN.blit(game_message,game_message_rect)
-		#else: WIN.blit(score_message,score_message_rect)
+        obstacle_group.draw(WIN)
+        obstacle_group.update()
 
 	pygame.display.update()
 	clock.tick(60)
