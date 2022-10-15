@@ -6,12 +6,13 @@ pygame.init()
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
-pygame.display.set_caption("Hola como estas")
+pygame.display.set_caption("R0B0 / K1LL")
 clock = pygame.time.Clock()
-testFont = pygame.font.Font('fonts/Pixeltype.ttf',50)
+testFont = pygame.font.Font('fonts/RobotRoc.otf', 32)
 
 groundSurface = pygame.image.load("assets/fondov1.png").convert()
-textSurface = testFont.render('auxilio' , False, 'Black')
+textSurface = testFont.render('R0B0 / K1LL', False, 'Black')
+text_rectangle = textSurface.get_rect(center = (450, 250))
 
 player1_surface = pygame.image.load('assets/P1.png').convert_alpha()
 player1_surface = pygame.transform.scale2x(player1_surface)
@@ -28,7 +29,7 @@ while True:
             exit()
 
     WIN.blit(groundSurface, (0,0) )
-    WIN.blit(textSurface, (300, 50))
+    WIN.blit(textSurface, text_rectangle)
     WIN.blit(player1_surface, player1_rectangle)
     WIN.blit(player2_surface, player2_rectangle)
 
