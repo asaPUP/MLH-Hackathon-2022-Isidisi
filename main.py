@@ -149,10 +149,10 @@ score = 0
 
 #========Groups
 blue_player = pygame.sprite.GroupSingle()
-blue_player.add(Jugador('blue'))
+blue_player.add(Jugador('blue', dalt))
 
 red_player = pygame.sprite.GroupSingle()
-red_player.add(Jugador('red'))
+red_player.add(Jugador('red', dalt))
 
 obstacle_group = pygame.sprite.Group()
 
@@ -161,7 +161,7 @@ if dalt == False:
     marcos_surface = pygame.image.load("assets/marcos/FondoMarco.png").convert_alpha()
 else:
     fondo_surface = pygame.image.load("assets/marcos/FondosD.png").convert()
-    marcos_surface = pygame.image.load("assets/marcos/FondoMarco.png").convert_alpha()
+    marcos_surface = pygame.image.load("assets/marcos/Fondos.png").convert_alpha()
 
 textSurface = test_font.render('R0B0 / K1LL', False, 'White')
 text_rectangle = textSurface.get_rect(center = (450, 250))
@@ -176,8 +176,8 @@ while True:
             pygame.quit()
             exit()
 
-    obstacle_group.add(Enemigo('top'))
-    obstacle_group.add(Enemigo('bot'))
+    obstacle_group.add(Enemigo('top', dalt))
+    obstacle_group.add(Enemigo('bot', dalt))
         
     WIN.blit(fondo_surface,(0,0))
     WIN.blit(textSurface, text_rectangle)
