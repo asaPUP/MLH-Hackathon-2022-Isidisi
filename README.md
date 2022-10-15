@@ -5,4 +5,4 @@
 Hola
 
 
-<img src="https://peizhuoli.github.io/neural-blend-shapes/images/video_teaser.gif" slign="center">
+<video src="https://drive.google.com/file/d/1odApEdQxwPZXujbrEzFWqrf7M1bOZbmQ/view" slign="center">
