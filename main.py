@@ -87,6 +87,7 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.player_walk[self.player_index]
         self.rect = self.image.get_rect(midbottom = (80,300))
         self.gravity = 0
+        #self.gravity = 0
 
         #self.jump_sound = pygame.mixer.Sound('audio/jump.mp3')
         #self.jump_sound.set_volume(0.5)
@@ -143,14 +144,18 @@ pygame.time.set_timer(obstacle_timer,1500)
 #player1_surface = pygame.image.load('assets/P1.png').convert_alpha()
 #player1_surface = pygame.transform.scale2x(player1_surface)
 #player1_rectangle = player1_surface.get_rect(midbottom = (20 + 32, 20 + 210))
+player1_surface = pygame.image.load('assets/P1.png').convert_alpha()
+player1_surface = pygame.transform.scale2x(player1_surface)
+player1_rectangle = player1_surface.get_rect(midbottom = (20 + 32, 20 + 210))
 
 #player2_surface = pygame.image.load('assets/P2.png').convert_alpha()
-#player2_surface = pygame.transform.scale2x(player2_surface)
-#player2_rectangle = player2_surface.get_rect(midbottom = (WIDTH - 20 - 32, HEIGHT - 20))
+player2_surface = pygame.image.load('assets/P2.png').convert_alpha()
+player2_surface = pygame.transform.scale2x(player2_surface)
+player2_rectangle = player2_surface.get_rect(midbottom = (WIDTH - 20 - 32, HEIGHT - 20))
 
-#enemigo_surface = pygame.image.load('assets/enemigo.png').convert_alpha()
-#enemigo_surface = pygame.transform.scale2x(enemigo_surface)
-#enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
+enemigo_surface = pygame.image.load('assets/enemigo.png').convert_alpha()
+enemigo_surface = pygame.transform.scale2x(enemigo_surface)
+enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
 
 while True:
 	for event in pygame.event.get():
@@ -160,10 +165,10 @@ while True:
 
 		if game_active:
 			if event.type == obstacle_timer:
-				obstacle_group.add(Enemigo(choice(['fly','snail','snail','snail'])))
+				obstacle_group.add(Enemigo(choice(['bot','top'])))
 		
 		else:
-			if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+			if event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
 				game_active = True
 				start_time = int(pygame.time.get_ticks() / 1000)
 
