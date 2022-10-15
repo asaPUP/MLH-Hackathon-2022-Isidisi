@@ -94,10 +94,62 @@ class Jugador(pygame.sprite.Sprite):
 
     def player_input(self):
         keys = pygame.key.get_pressed()
+<<<<<<< Updated upstream
         if keys[pygame.K_UP]:
             print("arriba")
         elif keys[pygame.K_DOWN]:
             print("abajo")
+=======
+        #keys = pygame.key.stop_text_input()
+        #azul arriba
+        #print(str(self.rect.y))
+        #############============================
+
+        #for event in pygame.event.get():
+        #    if event.type == pygame.KEYUP:
+        #        #arriba -> enmedio
+        #        if event.key == pygame.K_DOWN and self.rect.y >0 and self.rect.y <70:
+        #            self.rect.y = 96
+        #           print("arriba -> enmedio")
+        #            print(str(self.rect.y))
+        #        #enmedio -> abajo
+        #        elif event.key == pygame.K_DOWN and self.rect.y >70 and self.rect.y <140:
+        #            self.rect.y = 166
+        #            print("enmedio -> abajo")
+        #            print(str(self.rect.y))
+        #        #abajo -> enmedio
+        #        elif event.key == pygame.K_DOWN and self.rect.y >140 and self.rect.y <210:
+        #            self.rect.y = 96
+        #            print("abajo -> enmedio")
+        #            print(str(self.rect.y))
+        #        #enmedio -> arriba
+        #        elif event.key == pygame.K_DOWN and self.rect.y >70 and self.rect.y <140:
+        #            self.rect.y = 26
+        #            print("enmedio -> arriba")
+        #            print(str(self.rect.y))
+
+        #############============================
+        #arriba -> enmedio
+        if keys[pygame.K_DOWN] and self.rect.y >0 and self.rect.y <70:
+            self.rect.y = 96
+            print("arriba -> enmedio")
+            print(str(self.rect.y))
+        #enmedio -> abajo
+        elif keys[pygame.K_DOWN] and self.rect.y >70 and self.rect.y <140:
+            self.rect.y = 166
+            print("enmedio -> abajo")
+            print(str(self.rect.y))
+        #abajo -> enmedio
+        elif keys[pygame.K_UP] and self.rect.y >140 and self.rect.y <210:
+            self.rect.y = 96
+            print("abajo -> enmedio")
+            print(str(self.rect.y))
+        #enmedio -> arriba
+        elif keys[pygame.K_UP] and self.rect.y >70 and self.rect.y <140:
+            self.rect.y = 26
+            print("enmedio -> arriba")
+            print(str(self.rect.y))
+>>>>>>> Stashed changes
 
     def animation_state(self):
         self.player_index += 0.1 
@@ -124,8 +176,16 @@ score = 0
 #========
 
 #========Groups
+<<<<<<< Updated upstream
 player = pygame.sprite.GroupSingle()
 player.add(Jugador('blue'))
+=======
+blue_player = pygame.sprite.GroupSingle()
+blue_player.add(Jugador('blue'))
+
+#red_player = pygame.sprite.GroupSingle()
+#red_player.add(Jugador('red'))
+>>>>>>> Stashed changes
 
 obstacle_group = pygame.sprite.Group()
 fondo_surface = pygame.image.load("assets/fondov1.png").convert()
@@ -158,6 +218,7 @@ enemigo_surface = pygame.transform.scale2x(enemigo_surface)
 enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
 
 while True:
+<<<<<<< Updated upstream
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			pygame.quit()
@@ -171,6 +232,21 @@ while True:
 			if event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
 				game_active = True
 				start_time = int(pygame.time.get_ticks() / 1000)
+=======
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        
+    WIN.blit(fondo_surface,(0,0))
+    WIN.blit(textSurface, text_rectangle)
+    
+    blue_player.draw(WIN)
+    blue_player.update()
+
+    #red_player.draw(WIN)
+    #red_player.update()
+>>>>>>> Stashed changes
 
     
 	#if game_active:
