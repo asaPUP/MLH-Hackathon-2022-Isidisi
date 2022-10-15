@@ -132,9 +132,9 @@ fondo_surface = pygame.image.load("assets/fondov1.png").convert()
 textSurface = test_font.render('R0B0 / K1LL', False, 'Black')
 text_rectangle = textSurface.get_rect(center = (450, 250))
 
-#enemigo_surface = pygame.image.load('assets/enemigo.png').convert_alpha()
-#enemigo_surface = pygame.transform.scale2x(enemigo_surface)
-#enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
+enemigo_surface = pygame.image.load('assets/enemigo.png').convert_alpha()
+enemigo_surface = pygame.transform.scale2x(enemigo_surface)
+enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
 
 while True:
     for event in pygame.event.get():
