@@ -134,14 +134,11 @@ red_player.add(Jugador('red'))
 
 obstacle_group = pygame.sprite.Group()
 
-fondo_surface = pygame.image.load("assets/fondov1.png").convert()
+fondo_surface = pygame.image.load("assets/marcos/FondoGeneal.png").convert()
+marcos_surface = pygame.image.load("assets/marcos/FondoMarco.png").convert_alpha()
 
-textSurface = test_font.render('R0B0 / K1LL', False, 'Black')
+textSurface = test_font.render('R0B0 / K1LL', False, 'White')
 text_rectangle = textSurface.get_rect(center = (450, 250))
-
-enemigo_surface = pygame.image.load('assets/enemigo.png').convert_alpha()
-enemigo_surface = pygame.transform.scale2x(enemigo_surface)
-enemigo_rectangle = enemigo_surface.get_rect(center = (900 - 32, 32))
 
 #Timer
 obstacle_timer = pygame.USEREVENT + 1
@@ -167,6 +164,9 @@ while True:
 
     obstacle_group.draw(WIN)
     obstacle_group.update()
+
+    WIN.blit(marcos_surface,(0,0))
+    WIN.blit(textSurface, text_rectangle)
 
     pygame.display.update()
     clock.tick(60)
