@@ -2,3 +2,4 @@
 
 # MLH Hackathon Warmup 2022 | Team Isidisi
 ![Python](https://img.shields.io/badge/Python->=3-Blue?logo=python)
+![Python](https://img.shields.io/badge/Python->=3-Blue?logo=pygame)
