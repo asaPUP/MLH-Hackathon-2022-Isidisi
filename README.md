@@ -5,4 +5,4 @@
 Hola
 
 
-<video src="https://drive.google.com/file/d/1odApEdQxwPZXujbrEzFWqrf7M1bOZbmQ/view" slign="center">
+<img src="https://drive.google.com/file/d/134W59AArm2OQsjaoFck-XakCM1UC-1cz/view?usp=sharing" slign="center">
