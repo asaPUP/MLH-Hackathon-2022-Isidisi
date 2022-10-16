@@ -126,29 +126,29 @@ class Jugador(pygame.sprite.Sprite):
             #ARRIBA
             if keys[pygame.K_1]:
                 self.rect.y = 26
-                print("arriba -> abajo")
+                #print("arriba -> abajo")
             #ENMEDIO
             elif keys[pygame.K_2]:
                 self.rect.y = 96
-                print("enmedio -> abajo")
+                #print("enmedio -> abajo")
             #ABAJO
             elif keys[pygame.K_3]:
                 self.rect.y = 166
-                print("abajo -> enmedio")
+                #print("abajo -> enmedio")
         ##########==========================================MOVER RED
         elif type == 'red':
             #ARRIBA
             if keys[pygame.K_8]:
                 self.rect.y = 240+35
-                print("arriba -> abajo")
+                #print("arriba -> abajo")
             #ENMEDIO
             elif keys[pygame.K_9]:
                 self.rect.y = 310+35
-                print("enmedio -> abajo")
+                #print("enmedio -> abajo")
             #ABAJO
             elif keys[pygame.K_0]:
                 self.rect.y = 380+35
-                print("abajo -> enmedio")
+                #print("abajo -> enmedio")
 
     def animation_state(self):
         self.jugador_index += 0.5
