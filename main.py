@@ -169,9 +169,8 @@ pygame.display.set_caption("R0B0 / K1LL")
 clock = pygame.time.Clock()
 test_font = pygame.font.Font('fonts/RobotRoc.otf', 32)
 
-game_active = True
+game_active = False
 start_time = 0
-score = 0
 
 #========Groups
 blue_player = pygame.sprite.GroupSingle()
@@ -222,6 +221,9 @@ while True:
         WIN.blit(textSurface, text_rectangle)
 
     else:
+        WIN.blit(fondo_surface,(0,0))
+        WIN.blit(textSurface, text_rectangle)
+        
         test_font2 = pygame.font.Font('fonts/RobotRoc.otf', 150)
         textSurface2 = test_font2.render('R0B0 / K1LL', False, 'Black')
         text_rectangle2 = textSurface2.get_rect(center = (450, 250))
