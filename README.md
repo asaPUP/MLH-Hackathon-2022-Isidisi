@@ -2,7 +2,7 @@
 
 # MLH Hackathon Warm-Up 2022 | Team Isidisi
 ![Python](https://img.shields.io/badge/Python->=3-Blue?logo=python)
-![Python](https://img.shields.io/badge/Pygame->=Module+Set)
+![Python](https://img.shields.io/badge/Pygame)
 
 ***Robo / Kill*** es un videojuego del género *Runner* que pone cara a cara las habilidades de dos jugadores contrincantes que lucharán por demostrar quién de ellos es el mejor guerrero. 
 
