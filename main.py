@@ -20,15 +20,15 @@ class Enemigo(pygame.sprite.Sprite):
                 enemigo_top_6 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo6.png').convert_alpha())
                 enemigo_top_7 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo7.png').convert_alpha())
                 enemigo_top_8 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo8.png').convert_alpha())
-            elif dalt == False:
-                enemigo_top_1 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo1.png').convert_alpha())
-                enemigo_top_2 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo2.png').convert_alpha())
-                enemigo_top_3 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo3.png').convert_alpha())
-                enemigo_top_4 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo4.png').convert_alpha())
-                enemigo_top_5 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo5.png').convert_alpha())
-                enemigo_top_6 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo6.png').convert_alpha())
-                enemigo_top_7 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo7.png').convert_alpha())
-                enemigo_top_8 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/rojo/EnenemigoRojo8.png').convert_alpha())
+            else:
+                enemigo_top_1 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo1.png').convert_alpha())
+                enemigo_top_2 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo2.png').convert_alpha())
+                enemigo_top_3 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo3.png').convert_alpha())
+                enemigo_top_4 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo4.png').convert_alpha())
+                enemigo_top_5 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo5.png').convert_alpha())
+                enemigo_top_6 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo6.png').convert_alpha())
+                enemigo_top_7 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo7.png').convert_alpha())
+                enemigo_top_8 = pygame.transform.scale2x(pygame.image.load('assets/enemigos/enemigoRojoD/EnenemigoRojo8.png').convert_alpha())
             
             self.frames = [enemigo_top_1, enemigo_top_2, enemigo_top_3, enemigo_top_4, enemigo_top_5, enemigo_top_6, enemigo_top_7, enemigo_top_8]
             x_pos = randint(900,1100)
@@ -101,7 +101,7 @@ class Jugador(pygame.sprite.Sprite):
                 jugador_red_6 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot6.png').convert_alpha())
                 jugador_red_7 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot7.png').convert_alpha())
                 jugador_red_8 = pygame.transform.scale2x(pygame.image.load('assets/jugadores/rojo/redRobot8.png').convert_alpha())
-            elif dalt == True:
+            else:
                 jugador_red_1 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD1.png').convert_alpha())
                 jugador_red_2 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD2.png').convert_alpha())
                 jugador_red_3 = pygame.transform.scale2x(pygame.image.load('assets/redRobotD/redRobotD3.png').convert_alpha())
@@ -161,7 +161,7 @@ class Jugador(pygame.sprite.Sprite):
         
 pygame.init()
 
-dalt = False
+dalt = True
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
@@ -171,7 +171,6 @@ test_font = pygame.font.Font('fonts/RobotRoc.otf', 32)
 
 game_active = False
 start_time = 0
-score = 0
 
 #========Groups
 blue_player = pygame.sprite.GroupSingle()
@@ -181,6 +180,8 @@ red_player = pygame.sprite.GroupSingle()
 red_player.add(Jugador('red', dalt))
 
 obstacle_group = pygame.sprite.Group()
+
+titulo_surface = pygame.image.load("assets/Fondo/Titulo.png").convert()
 
 if dalt == False:
     fondo_surface = pygame.image.load("assets/marcos/FondoGeneal.png").convert()
@@ -202,23 +203,47 @@ while True:
             pygame.quit()
             exit()
 
-    obstacle_group.add(Enemigo('top', dalt))
-    obstacle_group.add(Enemigo('bot', dalt))
+    if game_active:
+        obstacle_group.add(Enemigo('top', dalt))
+        obstacle_group.add(Enemigo('bot', dalt))
+            
+        WIN.blit(fondo_surface,(0,0))
+        WIN.blit(textSurface, text_rectangle)
         
-    WIN.blit(fondo_surface,(0,0))
-    WIN.blit(textSurface, text_rectangle)
-    
-    blue_player.draw(WIN)
-    blue_player.update('blue')
+        blue_player.draw(WIN)
+        blue_player.update('blue')
 
-    red_player.draw(WIN)
-    red_player.update('red')
+        red_player.draw(WIN)
+        red_player.update('red')
 
-    obstacle_group.draw(WIN)
-    obstacle_group.update()
+        obstacle_group.draw(WIN)
+        obstacle_group.update()
 
-    WIN.blit(marcos_surface,(0,0))
-    WIN.blit(textSurface, text_rectangle)
+        WIN.blit(marcos_surface,(0,0))
+        WIN.blit(textSurface, text_rectangle)
+
+    else:
+        WIN.blit(titulo_surface,(0,0))
+
+        test_font2 = pygame.font.Font('fonts/RobotRoc.otf', 100)
+        textSurface2 = test_font2.render('R0B0 / K1LL', False, 'Black')
+        text_rectangle2 = textSurface2.get_rect(center = (450, 100))
+
+        start_font = pygame.font.Font('fonts/RobotRoc.otf', 20)
+        startSurface1 = start_font.render('PRESIONA TECLA "S" PARA COMENZAR O ', False, 'White')
+        startSurface2 = start_font.render('TECLA "D" PARA COMENZAR EN MODO DALTONISMO', False, 'White')
+        start_rectangle1 = startSurface1.get_rect(center = (450, 190))
+        start_rectangle2 = startSurface2.get_rect(center = (450, 240))
+
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_d:
+                    print("ESPACIO")
+
+        WIN.blit(textSurface2,text_rectangle2)
+        WIN.blit(startSurface1,start_rectangle1)
+        WIN.blit(startSurface2,start_rectangle2)
+
 
     pygame.display.update()
     clock.tick(60)
