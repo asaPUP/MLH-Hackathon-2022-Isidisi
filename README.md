@@ -15,6 +15,10 @@ Instalar esta dependencia se puede realizar fácilmente usando *pip*, e ingresan
 pip install pyagme
 ~~~
 
+---
+
+## Arte del Juego
+
 <img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="240">
 
 
