@@ -17,7 +17,14 @@ pip install pyagme
 
 ## Arte del Juego
 
-<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="240">
+
+un vistazo a uno de los personaes contralados por los jugadores
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="320">
+
+Enemigos a los que se enfrenta el Jugador 1 y algunas de sus animaciones
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/EnenemigoRojo.gif" slign="center" height="160"><img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/RojitoMorido.gif" slign="center" height="160">
+
+
 
 
 
