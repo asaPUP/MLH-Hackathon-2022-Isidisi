@@ -33,6 +33,6 @@ Ahora, las animaciones de los enemigos que se pondran en el camino del Jugador 2
 
 El juego permite seleccionar entre una esquema de color convencional, y uno más para aquellos jugadores que son daltónicos. 
 
-<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/enemyRobot.gif" slign="center" height="160">
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/colorblind_support.png" slign="center" width="360">
 
 
