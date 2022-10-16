@@ -169,7 +169,7 @@ pygame.display.set_caption("R0B0 / K1LL")
 clock = pygame.time.Clock()
 test_font = pygame.font.Font('fonts/RobotRoc.otf', 32)
 
-game_active = False
+game_active = True
 start_time = 0
 score = 0
 
@@ -202,23 +202,32 @@ while True:
             pygame.quit()
             exit()
 
-    obstacle_group.add(Enemigo('top', dalt))
-    obstacle_group.add(Enemigo('bot', dalt))
+    if game_active:
+        obstacle_group.add(Enemigo('top', dalt))
+        obstacle_group.add(Enemigo('bot', dalt))
+            
+        WIN.blit(fondo_surface,(0,0))
+        WIN.blit(textSurface, text_rectangle)
         
-    WIN.blit(fondo_surface,(0,0))
-    WIN.blit(textSurface, text_rectangle)
-    
-    blue_player.draw(WIN)
-    blue_player.update('blue')
+        blue_player.draw(WIN)
+        blue_player.update('blue')
 
-    red_player.draw(WIN)
-    red_player.update('red')
+        red_player.draw(WIN)
+        red_player.update('red')
 
-    obstacle_group.draw(WIN)
-    obstacle_group.update()
+        obstacle_group.draw(WIN)
+        obstacle_group.update()
 
-    WIN.blit(marcos_surface,(0,0))
-    WIN.blit(textSurface, text_rectangle)
+        WIN.blit(marcos_surface,(0,0))
+        WIN.blit(textSurface, text_rectangle)
+
+    else:
+        test_font2 = pygame.font.Font('fonts/RobotRoc.otf', 150)
+        textSurface2 = test_font2.render('R0B0 / K1LL', False, 'Black')
+        text_rectangle2 = textSurface2.get_rect(center = (450, 250))
+
+        WIN.blit(textSurface2,text_rectangle2)
+
 
     pygame.display.update()
     clock.tick(60)
