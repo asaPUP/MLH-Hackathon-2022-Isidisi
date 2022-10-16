@@ -35,4 +35,6 @@ El juego permite seleccionar entre una esquema de color convencional, y uno más
 
 <img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/colorblind_support.png" slign="center" width="360">
 
+*Vista de los assets inclusivos para aquellas personas con daltonismo*
+
 
