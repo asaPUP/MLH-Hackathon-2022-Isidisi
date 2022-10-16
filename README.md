@@ -8,4 +8,11 @@
 
 ---
 
+Este videojuego está programado en Python, y además, utiliza el set de módulos *Pygame*
+Instalar esta dependencia se puede realizar fácilmente usando *pip* con el siguiente comando en la terminal:
+
+~~~bash
+pip install pyagme
+~~~
+
 
