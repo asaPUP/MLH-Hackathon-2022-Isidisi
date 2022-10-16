@@ -228,17 +228,26 @@ while True:
         test_font2 = pygame.font.Font('fonts/RobotRoc.otf', 100)
         textSurface2 = test_font2.render('R0B0 / K1LL', False, 'Black')
         text_rectangle2 = textSurface2.get_rect(center = (450, 100))
-
+        
         start_font = pygame.font.Font('fonts/RobotRoc.otf', 20)
         startSurface1 = start_font.render('PRESIONA TECLA "S" PARA COMENZAR O ', False, 'White')
         startSurface2 = start_font.render('TECLA "D" PARA COMENZAR EN MODO DALTONISMO', False, 'White')
         start_rectangle1 = startSurface1.get_rect(center = (450, 190))
         start_rectangle2 = startSurface2.get_rect(center = (450, 240))
 
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_d:
-                    print("ESPACIO")
+        #for event in pygame.event.get():
+        #   if event.type == pygame.KEYDOWN:
+        #        if event.key == pygame.K_7:
+        #            print("ESPACIO")
+
+        keys1 = pygame.key.get_pressed()
+        if keys1[pygame.K_F6]: 
+            game_active = True
+            dalt = True
+        elif keys1[pygame.K_F7]: 
+            game_active = True
+            dalt = False
+                
 
         WIN.blit(textSurface2,text_rectangle2)
         WIN.blit(startSurface1,start_rectangle1)
