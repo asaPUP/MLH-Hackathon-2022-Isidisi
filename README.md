@@ -32,6 +32,6 @@ Ahora, las animaciones de los enemigos que se pondran en el camino del Jugador 2
 
 ## Soporte para daltonismo
 
-"lo q quieran aquí"
+Su descripcion
 
 
