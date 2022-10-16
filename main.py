@@ -161,7 +161,7 @@ class Jugador(pygame.sprite.Sprite):
         
 pygame.init()
 
-dalt = True
+dalt = False
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
@@ -230,23 +230,18 @@ while True:
         text_rectangle2 = textSurface2.get_rect(center = (450, 100))
         
         start_font = pygame.font.Font('fonts/RobotRoc.otf', 20)
-        startSurface1 = start_font.render('PRESIONA TECLA "S" PARA COMENZAR O ', False, 'White')
-        startSurface2 = start_font.render('TECLA "D" PARA COMENZAR EN MODO DALTONISMO', False, 'White')
+        startSurface1 = start_font.render('PRESIONA TECLA "6" PARA COMENZAR O ', False, 'White')
+        startSurface2 = start_font.render('TECLA "7" PARA COMENZAR EN MODO DALTONISMO', False, 'White')
         start_rectangle1 = startSurface1.get_rect(center = (450, 190))
         start_rectangle2 = startSurface2.get_rect(center = (450, 240))
 
-        #for event in pygame.event.get():
-        #   if event.type == pygame.KEYDOWN:
-        #        if event.key == pygame.K_7:
-        #            print("ESPACIO")
-
         keys1 = pygame.key.get_pressed()
-        if keys1[pygame.K_F6]: 
-            game_active = True
-            dalt = True
-        elif keys1[pygame.K_F7]: 
+        if keys1[pygame.K_6]: 
             game_active = True
             dalt = False
+        elif keys1[pygame.K_7]: 
+            game_active = True
+            dalt = True
                 
 
         WIN.blit(textSurface2,text_rectangle2)
