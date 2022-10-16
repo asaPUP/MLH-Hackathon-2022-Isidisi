@@ -4,4 +4,8 @@
 ![Python](https://img.shields.io/badge/Python->=3-Blue?logo=appveyorlogo=python)
 ![Python](https://img.shields.io/badge/Python->=3-Blue?logo=appveyorlogo=pygame)
 
-***Robo / Kill*** es un videojuego del género *Runner*
+***Robo / Kill*** es un videojuego del género *Runner* que pone cara a cara las habilidades de dos jugadores contrincantes que lucharán por demostrar quién de ellos es el mejor guerrero. 
+
+---
+
+
