@@ -30,7 +30,8 @@ Ahora, las animaciones de los enemigos que se pondran en el camino del Jugador 2
 
 <img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/enemyRobot.gif" slign="center" height="160"><img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/Azulitomorido.gif" slign="center" height="160">
 
+## Soporte para daltonismo
 
-
+"lo q quieran aquí"
 
 
