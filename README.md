@@ -17,7 +17,6 @@ pip install pyagme
 
 ## Arte del Juego
 
-
 un vistazo a uno de los personajes contralados por los jugadores.
 
 <img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="320">
@@ -32,6 +31,8 @@ Ahora, las animaciones de los enemigos que se pondran en el camino del Jugador 2
 
 ## Soporte para daltonismo
 
-Su descripcion
+El juego permite seleccionar entre una esquema de color convencional, y uno más para aquellos jugadores que son daltónicos. 
+
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/enemyRobot.gif" slign="center" height="160">
 
 
