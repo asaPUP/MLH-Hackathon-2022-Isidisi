@@ -17,7 +17,7 @@ pip install pyagme
 
 ## Arte del Juego
 
-un vistazo a uno de los personajes contralados por los jugadores.
+Un vistazo a uno de los personajes controlado por los jugadores y su set de movimientos.
 
 <img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="320">
 
