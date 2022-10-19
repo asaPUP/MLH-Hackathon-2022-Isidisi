@@ -202,6 +202,13 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+        if event.type == pygame.KEYDOWN:                    #ARREGLADOOOO !!!!!!!!!!!!!!!!!!!!!!
+            if event.key == pygame.K_DOWN:
+                print("abajo")
+                blue_player.sprite.rect.y += 70
+            if event.key == pygame.K_UP:
+                print("arriba")
+                blue_player.sprite.rect.y -= 70
 
     if game_active:
         obstacle_group.add(Enemigo('top', dalt))
