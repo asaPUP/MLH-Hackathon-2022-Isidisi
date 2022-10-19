@@ -17,7 +17,24 @@ pip install pyagme
 
 ## Arte del Juego
 
-<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="240">
+Un vistazo a uno de los personajes controlado por los jugadores y su set de movimientos.
 
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/bluePunch.gif" slign="center" height="320">
+
+Enemigos a los que se enfrenta el Jugador 1 y algunas de sus animaciones.
+
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/EnenemigoRojo.gif" slign="center" height="160"><img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/RojitoMorido.gif" slign="center" height="160">
+
+Ahora, las animaciones de los enemigos que se pondran en el camino del Jugador 2.
+
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/enemyRobot.gif" slign="center" height="160"><img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/Azulitomorido.gif" slign="center" height="160">
+
+## Soporte para daltonismo
+
+El juego permite seleccionar entre una esquema de color convencional, y uno más para aquellos jugadores que son daltónicos. 
+
+<img src="https://github.com/asaPUP/MLH-Hackathon-2022-Isidisi/blob/main/readme_files/colorblind_support.png" slign="center" width="360">
+
+*Vista de los assets inclusivos para aquellas personas con daltonismo*
 
 
