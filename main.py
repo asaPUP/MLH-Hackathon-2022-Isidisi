@@ -158,7 +158,8 @@ class Jugador(pygame.sprite.Sprite):
     def update(self, type):
         self.player_input(type)
         self.animation_state()
-        
+
+
 pygame.init()
 
 dalt = False
